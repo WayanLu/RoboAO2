@@ -14,7 +14,7 @@ const port = process.env.PORT || "8000";
 /**
  *  App Configuration
  */
-app.set("views", path.join(__dirname, "pages"));
+app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "pug");
 app.use(express.static(path.join(__dirname, "css")));
 /**
@@ -23,6 +23,8 @@ app.use(express.static(path.join(__dirname, "css")));
  app.get("/", (req, res) => {
     res.render("index", {});
   });
+const statusRouter = require("./routes/status")
+app.use("/status", statusRouter)
 /**
  * Server Activation
  */
