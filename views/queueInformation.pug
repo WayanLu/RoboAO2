@@ -1,0 +1,56 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel ="stylesheet" href="header.css")
+        link(rel ="stylesheet" href="queueInformation.css")
+        title Queue Information
+    body 
+        include includes/header.pug
+        h1 Queue Information
+        //- Information
+        table
+            thead 
+                tr
+                    th(colspan="2") General
+                tr
+                    th TimeStamp 
+                    th Blank
+                tr
+                    th Project 
+                    th Blank 
+                tr  
+                    th Name 
+                    th Blank 
+                tr  
+                    th State 
+                    th Blank 
+        table   
+            thead 
+                tr 
+                    th(colspan="2") Object 
+                tr  
+                    th RA 
+                    th #
+                tr  
+                    th Dec 
+                    th #
+                tr 
+                    th Epoch 
+                    th #
+                tr 
+                    th Mag 
+                    th #
+
+        table 
+            thead 
+                tr 
+                    th(colspan="2") Observation 
+                tr 
+                    th Exposure,s 
+                    th #
+                tr  
+                    th Filter 
+                    th #
