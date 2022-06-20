@@ -17,32 +17,32 @@ html(lang="en")
                     th(colspan="2") General
                 tr
                     th TimeStamp 
-                    th Blank
+                    th #{JSON.stringify(jsonData["General"]['timestamp'])}
                 tr
                     th Project 
-                    th Blank 
+                    th #{JSON.stringify(jsonData["General"]['project'])}
                 tr  
                     th Name 
-                    th Blank 
+                    th #{JSON.stringify(jsonData["General"]['name'])}
                 tr  
                     th State 
-                    th Blank 
+                    th #{JSON.stringify(jsonData["General"]['state'])}
         table   
             thead 
                 tr 
                     th(colspan="2") Object 
                 tr  
                     th RA 
-                    th #
+                    th #{JSON.stringify(jsonData["Object"]['ra'])}
                 tr  
                     th Dec 
-                    th #
+                    th #{JSON.stringify(jsonData["Object"]['dec'])}
                 tr 
                     th Epoch 
-                    th #
+                    th #{JSON.stringify(jsonData["Object"]['epoch'])}
                 tr 
                     th Mag 
-                    th #
+                    th #{JSON.stringify(jsonData["Object"]['mag'])}
 
         table 
             thead 
@@ -50,7 +50,7 @@ html(lang="en")
                     th(colspan="2") Observation 
                 tr 
                     th Exposure,s 
-                    th #
+                    th #{JSON.stringify(jsonData["Observation"]['exposure,s'])}
                 tr  
                     th Filter 
-                    th #
+                    th #{JSON.stringify(jsonData["Observation"]['filter'])}

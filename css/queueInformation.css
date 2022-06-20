@@ -47,3 +47,6 @@ p {
 tr,td,table, th, thead {
     border: 1px solid;
 }
+table {
+    margin-bottom: 5px;
+}

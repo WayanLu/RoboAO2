@@ -6,10 +6,10 @@
         "state": "test state"
     },
     "Object": {
-        "RA": "RA test",
-        "Dec": "Novemeber",
-        "Epoch": 1,
-        "Mag": 2.85
+        "ra": "RA test",
+        "dec": "Novemeber",
+        "epoch": 1,
+        "mag": 2.85
     },
     "Observation" :{
         "exposure,s" : "Not too bad",

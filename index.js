@@ -3,7 +3,6 @@
 /**
  * Required External Modules
  */
-const { Console } = require("console");
 const express = require("express");
 const path = require("path");
 const homeRouter = require("./routes/home.js")
@@ -12,7 +11,6 @@ const queueInfoRouter = require("./routes/queueInformation.js")
  * App Variables
  */
 const app = express();
-app.use(logger)
 const port = process.env.PORT || "8000";
 /**
  *  App Configuration
@@ -26,7 +24,7 @@ app.set(express.json());
  */
 app.get("/home", homeRouter)
 app.get("/queueInformation", queueInfoRouter)
-
+app.get("/", homeRouter)
 /**
  * Server Activation
  */
