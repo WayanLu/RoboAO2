@@ -54,3 +54,11 @@ html(lang="en")
                 tr  
                     th Filter 
                     th #{JSON.stringify(jsonData["Observation"]['filter'])}
+        //- div
+        //-     #{JSON.stringify(textData["text"])}
+        script
+            
+            include ../sockets/queueInformation.js
+            //- include ../utils/refresh.js
+            
+            
