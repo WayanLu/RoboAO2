@@ -6,7 +6,7 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         link(rel ="stylesheet" href="header.css")
         link(rel="stylesheet" href="queueInformation.css")
-        script(src="/socket.io/socket.io.js")
+        script(src="http://localhost:3001/socket.io/socket.io.js")
         title Robo-AO 2 Status Page
     body 
         include includes/header.pug
@@ -16,11 +16,11 @@ html(lang="en")
         
         script.
             const socket = io();
-            console.log(socket);
-            console.log("WHICH ONE")
+            console.log("home",socket);
             socket.emit("home_reached");
-
+            console.log("emitted home_reached")
             socket.on("get_home_data", (data) => {
+                console.log("get_home_data")
                 const tempid = document.querySelector("#test")
                 tempid.textContent = data['text']
                 console.log(data)

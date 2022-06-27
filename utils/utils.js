@@ -22,6 +22,18 @@ function readData() {
     }
 }
 
+exports.readQueueInfoData = () => {
+    const data = readData()
+
+    if (data.response && data.data != ""){ //Parsed log correctly
+        
+
+        return data
+    } else { // error
+        return data.data
+    }
+}
+
 exports.readHomeData = () => {
     const data = readData()
 

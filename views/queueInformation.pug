@@ -6,6 +6,7 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         link(rel ="stylesheet" href="header.css")
         link(rel ="stylesheet" href="queueInformation.css")
+        script(src="/socket.io/socket.io.js")
         title Queue Information
     body 
         include includes/header.pug
@@ -54,11 +55,16 @@ html(lang="en")
                 tr  
                     th Filter 
                     th #{JSON.stringify(jsonData["Observation"]['filter'])}
-        //- div
+        div#test 
         //-     #{JSON.stringify(textData["text"])}
-        script
-            
-            include ../sockets/queueInformation.js
-            //- include ../utils/refresh.js
-            
+        script.
+            const socket = io();
+            console.log("emitting queueConnection", socket)
+            socket.emit("queueInformation")
+
+            socket.on("send_queueInfo_data", (data) => {
+                const tempid = document.querySelector("#test")
+                tempid.textContent = data['text']
+                console.log(data)
+            })          
             
