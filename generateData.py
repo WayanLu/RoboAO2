@@ -11,15 +11,12 @@ def randStr(chars=string.ascii_uppercase + string.digits, N=10):
 
 #print("Timestamp", str(datetime.now().strftime("%H:%M:%S")), randStr(N=10))
 
-f = open('testdata.txt', 'w')
+f = open("testdata.txt", "w")
 while True:
-	print("Writing Data..")
 	f.write("Timestamp: ")
 	f.write(str(datetime.now().strftime("%H:%M:%S")))
 	f.write(str(" " + randStr(N=10)))
 	f.write("\n")
 	sleep(1)
 	f.flush()
-
-
-
+	f.close()

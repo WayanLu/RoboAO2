@@ -4,7 +4,6 @@
  */
 const express = require("express");
 const path = require("path");
-const { disconnect } = require("process");
 const home = require("./routes/home.js");
 const utils = require('./utils/utils.js')
 /**
@@ -12,7 +11,7 @@ const utils = require('./utils/utils.js')
  */
 const app = express();
 const server = require('http').createServer(app);
-const port = process.env.PORT || "3001";
+const port = process.env.PORT || "10030";
 const io = require('socket.io')(server, {
   cors: {
     origin: "*",
@@ -39,49 +38,44 @@ server.listen(port, () => {
 //socket handlers
 io.on("connection", (socket) => {
   console.log(`user connected: ${socket.id}`);
-  
-  //queueinformation
-  socket.on("queueInformation", () => {
-    let intervalID = setInterval(() => {
-      
-      if (socket.connected){
-        console.log("calling readQueueData", socket.id)
-      const data = utils.readQueueInfoData().data
-      socket.emit("send_queueInfo_data", {
-        text: data,
-        socket: socket.id
-      },2000)
-    } else {
-      console.log("exiting loop")
-      clearInterval(intervalID)
-    }
 
-      
-      
-      // socket.on("disconnection", function(){
-      //   console.log(`user ${socket.id} disconnected`)
-      //   clearInterval(intervalID);
-      // })
-    }, 2000);
-  })
-
-  //home
+  //home page
   socket.on("home_reached", () => {
-    //console.log(socket.server.eio.clients)
     let intervalID = setInterval(() => {
-        if (socket.connected){
-        console.log("Calling readHomeData", socket.id)
+      if (socket.connected) {
         let data = utils.readHomeData().data;
+
         socket.emit("get_home_data", {
           text: data,
           socket: socket.id
         })
-      } else {
+
+      } else { // exit interval loop
         clearInterval(intervalID);
       }
-      }, 2000)
-    })
-  
+    }, 2000)
+  })
+
+  //queueinformation page
+  socket.on("queueInformation", () => {
+    let intervalID = setInterval(() => {
+
+      if (socket.connected) {
+        const data = utils.readQueueInfoData().data
+
+        socket.emit("send_queueInfo_data", {
+          text: data,
+          socket: socket.id
+        }, 2000)
+
+      } else { // exit interval loop
+        clearInterval(intervalID)
+      }
+
+    }, 2000);
+  })
+
+  // Listen for socket disconnection
   socket.on("disconnect", () => {
     console.log(`${socket.id} disconnected`)
   })
