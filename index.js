@@ -4,7 +4,6 @@
  */
 const express = require("express");
 const path = require("path");
-const home = require("./routes/home.js");
 const utils = require('./utils/utils.js')
 /**
  * App Variables
@@ -31,7 +30,7 @@ app.get("/", homeRouter);
 app.get('/queueInformation', queueInfoRouter)
 
 server.listen(port, () => {
-  console.log(`Listening to requests on http://localhost:${port}`);
+  console.log(`Listening to requests on ${port}`);
 });
 
 
@@ -41,18 +40,31 @@ io.on("connection", (socket) => {
 
   //home page
   socket.on("home_reached", () => {
+    let lastUpdateTime = null;
     let intervalID = setInterval(() => {
+      let fileModifiedTime = utils.getLastModifiedTime("./testdata.txt") // current file time
+      
+      console.log({lastUpdateTime, fileModifiedTime})
+      
       if (socket.connected) {
-        let data = utils.readHomeData().data;
+        if (utils.isUpdated(lastUpdateTime, fileModifiedTime)){ //if true, emit socket
+      
+          let data = utils.readHomeData();
 
-        socket.emit("get_home_data", {
-          text: data,
-          socket: socket.id
-        })
-
-      } else { // exit interval loop
-        clearInterval(intervalID);
+          socket.emit("get_home_data", {
+            text: data.data,
+            socket: socket.id,
+            imageBuffer: data.imageBuffer
+          });
+          
+          lastUpdateTime = utils.getLastModifiedTime('./testdata.txt')
+        } else {
+          console.log("not updated, skip emit")
+        }
       }
+      else { // exit interval loop if socket is not connected
+        clearInterval(intervalID);
+      };
     }, 2000)
   })
 

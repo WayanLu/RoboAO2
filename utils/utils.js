@@ -1,10 +1,16 @@
 const fs = require('fs')
+// function to check if a log is updated or not
+function getImage ()  {
+    // TODO
+    let imgBuffer = fs.readFileSync('pug.jpeg')
+    return imgBuffer.toString('base64')
+}
 
 function readData() {
     try{
-        console.log("reading testdata")
         const data = fs.readFileSync("testdata.txt",{
             encoding : "utf-8",})
+        
         
         const lineArray = data.trim().split('\n')
         const lastLine = lineArray[lineArray.length - 1]
@@ -14,7 +20,6 @@ function readData() {
             response: true
         }
     } catch (error) {
-        console.error(error)
         return {
             data: error,
             response: false
@@ -22,22 +27,38 @@ function readData() {
     }
 }
 
-exports.readQueueInfoData = () => {
+exports.isUpdated = (lastUpdateTime, currentUpdateTime) => {
+    if (JSON.stringify(lastUpdateTime) == JSON.stringify(currentUpdateTime)){
+        return false
+    } else {
+        return true
+    }
+}
+
+exports.getLastModifiedTime = (filePath) => {
+    const {mtime} = fs.statSync(filePath)
+
+    return mtime
+}
+
+// HOME
+exports.readHomeData = () => {
     const data = readData()
+    const imageBuffer = getImage()
 
     if (data.response && data.data != ""){ //Parsed log correctly
-        
-
-        return data
+        return {data, imageBuffer}
     } else { // error
         return data.data
     }
 }
 
-exports.readHomeData = () => {
+// QUEUE INFORMATION
+exports.readQueueInfoData = () => {
     const data = readData()
+    data['image'] = getImage()
 
-    if (data.response && data.data != ""){ //Parsed log correctly
+    if (data.response){ //Parsed log correctly
         
 
         return data
