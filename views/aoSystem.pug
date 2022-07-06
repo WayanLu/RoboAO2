@@ -1,0 +1,58 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible", content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        link(rel ="stylesheet" href="header.css")
+        link(rel="stylesheet" href="aoSystem.css")
+        script(src="socket.io/socket.io.js")
+        title Robo-AO 2 Status Page
+    body 
+        include includes/header.pug
+        table
+            thead 
+                tr
+                    th(colspan="2") General
+                tr
+                    th TimeStamp 
+                    th#timestamp
+        table
+            thead 
+                tr
+                    th(colspan="2") Focus       
+                tr
+                    th Current, nm 
+                    th#current
+                tr  
+                    th Average, nm 
+                    th#average 
+                tr  
+                    th Secondary Refocus, nm
+                    th#secondary_refocus
+        table   
+            thead 
+                tr 
+                    th(colspan="2") Average Intensity
+                tr  
+                    th Intensity
+                    th#intensity
+        table 
+            thead 
+                tr 
+                    th(colspan="2") Deformable Mirror
+                tr 
+                    th Min Value
+                    th#min_value 
+                tr  
+                    th Median Value 
+                    th#median_value
+                tr  
+                    th Max Value
+                    th#max_value
+                tr  
+                    th R_0
+                    th#r_0
+        
+        //- script  
+        //-     include /sockets/aoSystem.js

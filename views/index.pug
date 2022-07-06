@@ -5,34 +5,23 @@ html(lang="en")
         meta(http-equiv="X-UA-Compatible", content="IE=edge")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         link(rel ="stylesheet" href="header.css")
-        link(rel="stylesheet" href="queueInformation.css")
+        link(rel="stylesheet" href="display.css")
         script(src="socket.io/socket.io.js")
         title Robo-AO 2 Status Page
+        script(type = "text/javascript").
+            const data = !{JSON.stringify(data)} // getting data from res.render
     body 
         include includes/header.pug
         h1 Home Page
+    
+        .container
+            .telemetry 
+
+            .image
+                img.content#image
         p#test
-        img#image
         
         script
             include sockets/home.js
-        
-        //- script.
-        //-     const socket = io();
-        //-     console.log("home",socket);
-        //-     socket.emit("home_reached");
-        //-     console.log("emitted home_reached")
-        //-     socket.on("get_home_data", (data) => {
-        //-         console.log(data)
-        //-         console.log("get_home_data")
 
-        //-         const img = new Image()
-        //-         img.src = 'data:image/jpeg;base64,' + data.imageBuffer;
-        //-         document.getElementById("image").appendChild(img)
-                
-
-        //-         const tempid = document.querySelector("#test")
-        //-         tempid.textContent = data.text.data
-        //-     }) 
-            
 

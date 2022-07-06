@@ -1,18 +1,1 @@
-{
-    "General": {
-        "timestamp": "01:01:0111",
-        "project": "test project",
-        "name": "test name",
-        "state": "test state"
-    },
-    "Object": {
-        "ra": "RA test",
-        "dec": "Novemeber",
-        "epoch": 1,
-        "mag": 2.85
-    },
-    "Observation" :{
-        "exposure,s" : "Not too bad",
-        "filter": 4.2
-    }
-}
+{"General": {"timestamp": "15:05:14", "project": "60VMB2L9SX", "name": "C4VDW03T8P", "state": "0MUPFG330A"}, "Object": {"ra": "BAW4JUN7MY", "dec": "0KVLT7NE0A", "epoch": 4, "mag": 9}, "Observation": {"exposure,s": "533XNW1LIC", "filter": 1}}

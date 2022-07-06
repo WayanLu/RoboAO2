@@ -1,0 +1,7 @@
+tr,td,table, th, thead {
+    border: 1px solid;
+    min-width: 50px;
+}
+table {
+    margin-bottom: 5px;
+}

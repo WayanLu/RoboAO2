@@ -5,6 +5,7 @@
 const express = require("express");
 const path = require("path");
 const utils = require('./utils/utils.js')
+const CONFIG = require("./utils/config")
 /**
  * App Variables
  */
@@ -23,11 +24,20 @@ app.use(express.static(path.join(__dirname, "css")));
 app.set(express.json());
 app.set("socket.io", io);
 
+//setting up routes
 const homeRouter = require("./routes/home.js")(io);
 const queueInfoRouter = require("./routes/queueInformation.js")(io);
+//const lchFileStatusRouter = require("./routes/lchFileStatus.js")(io);
+const aoSystemRouter = require("./routes/aoSystem.js")(io);
+const aoLoopRouter = require("./routes/aoLoop.js")(io);
 
+//setting up GET requests for routes
 app.get("/", homeRouter);
-app.get('/queueInformation', queueInfoRouter)
+app.get('/queueInformation', queueInfoRouter);
+
+app.get("/aoSystem", aoSystemRouter);
+app.get("/aoLoop", aoLoopRouter);
+
 
 server.listen(port, () => {
   console.log(`Listening to requests on ${port}`);
@@ -39,25 +49,19 @@ io.on("connection", (socket) => {
   console.log(`user connected: ${socket.id}`);
 
   //home page
-  socket.on("home_reached", () => {
+  socket.on(CONFIG.socketStrings.home.route, () => {
     let lastUpdateTime = null;
     let intervalID = setInterval(() => {
-      let fileModifiedTime = utils.getLastModifiedTime("./testdata.txt") // current file time
-      
-      console.log({lastUpdateTime, fileModifiedTime})
+      let fileModifiedTime = utils.getLastModifiedTime(CONFIG.paths.logs.testData) // current file time
       
       if (socket.connected) {
         if (utils.isUpdated(lastUpdateTime, fileModifiedTime)){ //if true, emit socket
-      
-          let data = utils.readHomeData();
-
-          socket.emit("get_home_data", {
-            text: data.data,
-            socket: socket.id,
-            imageBuffer: data.imageBuffer
-          });
+          // TODO
+          const data = utils.getData(hasData = CONFIG.paths.logs.testData, hasImage = CONFIG.paths.images.pugImage);
+          console.log(data)
+          socket.emit(CONFIG.socketStrings.home.getData, (data) );
           
-          lastUpdateTime = utils.getLastModifiedTime('./testdata.txt')
+          lastUpdateTime = utils.getLastModifiedTime(CONFIG.paths.logs.testData)
         } else {
           console.log("not updated, skip emit")
         }

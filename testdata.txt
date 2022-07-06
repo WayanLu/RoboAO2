@@ -1,1 +1,1 @@
-Timestamp: 10:54:10 DDUZH8I7YV
+{"General": {"timestamp": "10:18:29", "project": "G43WHP5C9R", "name": "EX4XIITZSJ", "state": "2YF8FYZZ8S"}, "Object": {"ra": "SIOJV5A57T", "dec": "CTGUHZRE8C", "epoch": 7, "mag": 8}, "Observation": {"exposure": "CR3IMF434K", "filter": 1}, "Test1": {"sasd": 1, "dpasn": 0.5}, "Test2": {"sgft": 1, "dadsn": 0.5}, "Test3": {"adset": 1, "dgasdin": 0.5}, "Test4": {"sj13t": 1, "d123n": 0.5}}
