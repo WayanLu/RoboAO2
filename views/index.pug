@@ -7,6 +7,8 @@ html(lang="en")
         link(rel ="stylesheet" href="header.css")
         link(rel="stylesheet" href="display.css")
         script(src="socket.io/socket.io.js")
+        script(src="https://cdn.jsdelivr.net/npm/chart.js")
+
         title Robo-AO 2 Status Page
         script(type = "text/javascript").
             const data = !{JSON.stringify(data)} // getting data from res.render
@@ -19,9 +21,13 @@ html(lang="en")
 
             .image
                 img.content#image
+
+            .graph
+                h3 Graph
+                
         p#test
         
         script
-            include sockets/home.js
+            include includes/client.js
 
 

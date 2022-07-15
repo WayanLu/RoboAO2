@@ -26,9 +26,8 @@
     padding: 14px 16px;
     text-decoration: none;
     font-size: 17px;
-    border-right: 1px;
-    border-right-color: whitesmoke;
-    border-right-style: dashed;
+    border: 5px;
+    
 }
 
 /* Change the color of links on hover */
@@ -41,5 +40,24 @@
 .topnav a.active {
     background-color: #04AA6D;
     color: white;
+}
+
+.topnav a.warning{
+    border:5px;
+    border-style:solid;
+    border-color:yellow;
+    padding:10px 12px;
+}
+.topnav a.good{
+    border:5px;
+    border-style:solid;
+    border-color:green;
+    padding:10px 12px;
+}
+.topnav a.danger{
+    border:5px;
+    border-style:solid;
+    border-color:red;
+    padding:10px 12px;
 }
 
