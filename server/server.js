@@ -1,9 +1,9 @@
-// index.js
+// server.js
 const express = require("express");
 const path = require("path");
-const utils = require('./utils/utils.js')
-const CONFIG = require("./utils/config")
-const Logger = require("./utils/logger")
+const utils = require('./libs/utils.js')
+const CONFIG = require("./libs/config")
+const Logger = require("./libs/logger")
 const app = express();
 const server = require('http').createServer(app);
 const port = process.env.PORT || "10030";
@@ -12,22 +12,22 @@ const io = require('socket.io')(server, {
     origin: "*",
   }
 })
-
-
 Logger.createFile() // start the logger
 
-app.set("views", path.join(__dirname, "views"));
+
+const fixedPath = __dirname.replace("server","client")
+app.set("views", fixedPath)
 app.set("view engine", "pug");
-app.use(express.static(path.join(__dirname, "css")));
+app.use(express.static(path.join(fixedPath, "css")))
 app.set(express.json());
 app.set("socket.io", io);
 
-//setting up routes
+///////// Router Setup
 const homeRouter = require("./routes/home.js")(io);
 const vicdRouter = require("./routes/vicd.js")(io);
 
 
-//setting up GET requests for routes
+///////// Get Request for Routes
 app.get("/", homeRouter);
 app.get('/vicd', vicdRouter);
 
@@ -37,11 +37,11 @@ server.listen(port, () => {
 });
 
 
-//socket handlers
+//////////////////////////////// SOCKETS
 io.on("connection", (socket) => {
   Logger.log(`------ User Connected : ${socket.id} --------`,"")
   
-  //home page
+  //////////////// Home Page
   socket.on(CONFIG.socketStrings.home.route, () => {
     Logger.log(`${socket.id} reached home page`, "")
     let lastUpdateTime = null;
@@ -65,7 +65,7 @@ io.on("connection", (socket) => {
     }, 2000)
   })
 
-  //vicd page
+  ////////////////// VICD Page
   socket.on(CONFIG.vicd.socketStrings.route, () => {
     Logger.log(`${socket.id} reached vicd page`, "")
     let lastUpdateTime = utils.getLastModifiedTime(CONFIG.vicd.paths.testGraph);
@@ -88,7 +88,14 @@ io.on("connection", (socket) => {
       };
     }, 2000)
   })
-  // Listen for socket disconnection
+
+
+
+
+
+
+
+  //////////////////// Socket Disconnection
   socket.on("disconnect", () => {
     console.log(`${socket.id} disconnected`)
     Logger.log(`${socket.id} disconnected`, "")

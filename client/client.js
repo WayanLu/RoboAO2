@@ -1,6 +1,5 @@
 //Client side script for home
 //the variable data contains information about the page and socket
-// 
 
 
 const socket = io();
@@ -8,26 +7,28 @@ console.log(data)
 try {
     statusUpdate(data)
     socket.emit(data.socketStrings.route);
-    generateTelemetryVisuals(data)
+    generateVisuals(data)
 } catch (error) {
     console.log(error)
 }
 
-// TODO
 socket.on(data.socketStrings.getData, (socketData) => {
     console.log("get_home_data")
     try{
         statusUpdate(socketData)
-        modifyTelemetryVisuals(socketData)
-        
+        modifyVisuals(socketData)
     } catch (error) {
         console.log(error)
     }
 })
 
 
-// Function that generates the html elements on first get request to the page, iterates through the data to 
-function generateTelemetryVisuals(data) {
+////////////////// Functions 
+/* 
+    Function that generates the html elements on first get request to the page, iterates through the data
+    sent from the server and creates html elements with the appropriate data
+*/
+function generateVisuals(data) {
     const telemetry = data.telemetry
     const image = data.image
     const graph = data.graph
@@ -65,8 +66,20 @@ function generateTelemetryVisuals(data) {
             }
         }
         if (image != null) {
-            const picture = document.getElementById("image")
-            picture.src = 'data:image/jpeg;base64,' + image.imageBuffer;
+            const imageContainer = document.querySelector(".image")
+
+
+            for(index in image){
+                const dict = image[index]
+                const imageElement = new Image()
+
+                imageElement.classList = "content"
+                imageElement.id = `image${index}`
+                imageElement.src = 'data:image/jpeg;base64,' + dict.imageBuffer;
+
+                imageContainer.appendChild(imageElement)
+            }
+            
         }
         if (graph != null) {
             const chartElem = document.createElement('CANVAS')
@@ -82,16 +95,15 @@ function generateTelemetryVisuals(data) {
     } catch (error){
         console.log(error)
     }
-}
+} // end generateVisuals()
 
 
-function modifyTelemetryVisuals(data){
+function modifyVisuals(data){
     const telemetry= data.telemetry
     const image = data.image
     const graph = data.graph
     try {
         if (telemetry != null) {
-            // making elements
             for (const [tableName, content] of Object.entries(telemetry)) {
                 for (const [name, value] of Object.entries(content)) {
                     const element = document.getElementById(`${name}`)
@@ -100,8 +112,10 @@ function modifyTelemetryVisuals(data){
             }
         }
         if (image != null) {
-            const picture = document.getElementById("image")
-            picture.src = 'data:image/jpeg;base64,' + image.imageBuffer;
+            for(index in  image){
+                const picture = document.getElementById(`image${index}`)
+                picture.src = 'data:image/jpeg;base64,' + dict.imageBuffer;
+            }
         }
         if (graph != null) {
             const chart = Chart.getChart('chart').getContext("2d").chart
@@ -124,6 +138,8 @@ function modifyTelemetryVisuals(data){
 }
 
 /*
+    statusUpdate()
+
     Function to update the status colors of each componenet
     Iterates through each key of data.status and the key name refers to each tab 
     on the webpage. Each tab has its own css #id which is also the key name

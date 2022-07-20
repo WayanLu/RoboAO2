@@ -5,7 +5,6 @@ from time import sleep, time
 import random
 import string
 import json
-from tkinter import W
 
 
 

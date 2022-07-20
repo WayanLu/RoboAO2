@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-const LOG = true;
+const LOG = true; // Set to true or false to turn on logger
 const FILENAME = "log.txt"
 
 exports.createFile = () => {

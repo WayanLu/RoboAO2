@@ -8,25 +8,26 @@ html(lang="en")
         link(rel="stylesheet" href="display.css")
         script(src="socket.io/socket.io.js")
         script(src="https://cdn.jsdelivr.net/npm/chart.js")
+
         title Robo-AO 2 Status Page
         script(type = "text/javascript").
             const data = !{JSON.stringify(data)} // getting data from res.render
     body 
         include includes/header.pug
-        h1 VICD
+        h1 Home Page
     
         .container
             .telemetry 
 
             .image
-                img.content#image
+                img.content#image1
 
             .graph
-                
+                h3 Graph
                 
         p#test
         
         script
-            include includes/client.js
+            include client.js
 
 

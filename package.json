@@ -2,9 +2,9 @@
   "name": "roboao2",
   "version": "1.0.0",
   "description": "Repository for the status page of Robo-AO 2",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
-    "dev": "nodemon ./index.js"
+    "dev": "nodemon ./server/server.js"
   },
   "repository": {
     "type": "git",

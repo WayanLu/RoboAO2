@@ -11,16 +11,16 @@ module.exports = {
             testJson: "./testdata.json"
         },
         images: {
-            pugImage: "./pug.jpeg",
-            catImage: "./cat.jpg",
-            turtleImage: "./turtle.jpg"
+            pugImage: "./data/pug.jpeg",
+            catImage: "./data/cat.jpg",
+            turtleImage: "./data/turtle.jpg"
         }
     },
-
+    // delete above 
     vicd: {
         paths: {
             log: "./data/vicd.dat",
-            testGraph: "./testdata.txt"
+            testGraph: "./data/testdata.txt"
         },
         socketStrings: {
             route: "vicd",
@@ -86,10 +86,15 @@ module.exports = {
                 }
             }
         },
-        image: {
-            path: "./pug.jpeg",
-            imageBuffer: null
-        },
+        image: [{
+                path: "./data/pug.jpeg",
+                imageBuffer: null
+            },
+            // {
+            //     path:"./turtle.jpg",
+            //     imageBuffer: null
+            // },
+        ],
         graph: {
             type: 'line',
             data: {
@@ -98,7 +103,7 @@ module.exports = {
                     data: [],
                 }]
             },
-            options : {
+            options: {
                 scales: {
                     x: {
                         title: {
@@ -120,7 +125,25 @@ module.exports = {
             status: null,
 
         }
+    },
+
+    test: {
+        paths: {
+
+        },
+        socketStrings: {
+            route: "testRoute",
+            getData: "getTestData"
+        },
+        telemetry: {
+
+        },
+        image: {
+
+        },
+        graph: {
+
+        },
+        status:null,
     }
 }
-
-// should change the hiearchy of the dictionary

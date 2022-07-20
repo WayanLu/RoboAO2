@@ -1,4 +1,22 @@
-
+@media screen and (max-width: 320px) {
+    /* comes into effect for screens less than or equal to 320 pixels */
+    #somethingorother {
+      width: 120px ;
+    }
+  }
+  @media screen and (min-width: 321px) and (max-width: 480px) {
+    /* comes into effect for screens between 321 and 480 pixels (inclusive) */
+    #somethingorother {
+      width: 320px ;
+    }
+  }
+  @media screen and (min-width: 481px) {
+    /* comes into effect for screens larger than or equal to 481 pixels */
+    #somethingorother {
+      width: 480px ;
+    }
+  }
+  
 .container {
     background-color: gainsboro;
     width: 100%;
@@ -19,42 +37,39 @@
     flex-wrap:wrap;
     max-height:300px;
     max-width: 70%;
-    gap:5px
-    
+    gap:5px;
 }
 
 .image {
     background-color: lightpink;
     height:300px;
-    width: 100%;
-    max-height:300px;
+    width: 28%;
+    max-height:800px;
     max-width:28%;
     margin-right: 5px;
     display:flex;
-    justify-content: center;
+    flex-direction: column;  
+    align-items: center;
 }
 
 img.content{
     max-width: 100%;
     max-height: 100%;
+
+    width:fit-content;
+    height:fit-content
+  
 }
 .graph {
     height: 400px;
     width: 800px;
-    background-color: bisque;
+    background-color: white;
     margin-left: 10px;
     margin-top: -300px;
     text-align:center;
 }
     
-/* table {
-    margin-bottom: 5px;
-    border: 1px;
-}
-thead {
-    border-color: black;
-    border: 1px;
-} */
+
 
 tr,td,table, th, thead {
     border: 1px solid black;

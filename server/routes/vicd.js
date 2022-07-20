@@ -1,6 +1,6 @@
 const express = require("express");
-const utils = require("../utils/utils")
-const CONFIG = require("../utils/config")
+const utils = require("../libs/utils")
+const CONFIG = require("../libs/config")
 const router = express.Router()
 
 
