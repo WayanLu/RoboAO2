@@ -1,5 +1,4 @@
 # RoboAO2
-<<<<<<< HEAD
 ### A Dynamic Status Page for Robo-AO 2
 
 ## **Getting Started**
@@ -297,9 +296,3 @@ ___
 ___
 ```/server/libs/logger.js```
 - This file is a basic logger that outputs to a log file. There is a boolean variable that you can set to `true` or `false` to turn it on
-=======
-Repository for the status page of Robo-AO 2
-
-## Adding a new component
-**server.js**
->>>>>>> ca161b8c3ca525bc6972b37f385e3e0671874b1c
