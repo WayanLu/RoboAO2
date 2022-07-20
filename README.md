@@ -1,5 +1,4 @@
 # RoboAO2
-<<<<<<< HEAD
 ### A Dynamic Status Page for Robo-AO 2
 
 ## **Getting Started**
