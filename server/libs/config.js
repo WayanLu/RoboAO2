@@ -1,21 +1,4 @@
 module.exports = {
-    socketStrings: {
-        home: {
-            route: "home_reached",
-            getData: "get_home_data"
-        }
-    },
-    paths: {
-        logs: {
-            testData: "./data/testdata.txt",
-            testJson: "./testdata.json"
-        },
-        images: {
-            pugImage: "./data/pug.jpeg",
-            catImage: "./data/cat.jpg",
-            turtleImage: "./data/turtle.jpg"
-        }
-    },
     // delete above 
     vicd: {
         paths: {
@@ -40,12 +23,13 @@ module.exports = {
                     data: null,
                     title: "Daemon State"
                 },
+                
+            },
+            test2: {
                 errorCode: {
                     data: null,
                     title: "Error Code"
-                }
-            },
-            test2: {
+                },
                 observeMode: {
                     data: null,
                     title: "Observing Mode"
@@ -67,6 +51,10 @@ module.exports = {
                 ccdSetTemp: {
                     data: null,
                     title: "CDD Set Temp"
+                },
+                coolerOn: {
+                    data: null,
+                    title: "Cooler On?"
                 },
                 coolerSetPoint: {
                     data: null,
@@ -127,23 +115,23 @@ module.exports = {
         }
     },
 
-    test: {
-        paths: {
+    // test: {
+    //     paths: {
 
-        },
-        socketStrings: {
-            route: "testRoute",
-            getData: "getTestData"
-        },
-        telemetry: {
+    //     },
+    //     socketStrings: {
+    //         route: "testRoute",
+    //         getData: "getTestData"
+    //     },
+    //     telemetry: {
 
-        },
-        image: {
+    //     },
+    //     image: {
 
-        },
-        graph: {
+    //     },
+    //     graph: {
 
-        },
-        status:null,
-    }
+    //     },
+    //     status:null,
+    // }
 }

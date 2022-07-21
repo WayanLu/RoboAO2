@@ -16,6 +16,16 @@ exports.getImage = (imageConfig) => {
     }
     return updatedImageConfig
 }
+/*
+    lineToArray()
+
+    Takes a line and turns it into an array where it splits based on " "
+*/
+exports.lineToArray = (line) => {
+    const lineArray = line.split(" " || "  ").filter(element => element !== '')
+
+    return lineArray
+}
 
 /*
     getLastLine()
@@ -35,7 +45,11 @@ exports.getLastLine = (filepath) => {
 /*
     getStatusData()
 
-    Returns a dictionary of the status levels of each component
+    Returns a dictionary of the status levels of each component 
+
+    ** As of right now this is just a place holder function for calculating the status of each component
+
+    **** Make sure the status component key name corresponds to the CONFIG.component name
 */
 exports.getStatusData = () => {
     const levels = ['good', 'warning', 'danger']
@@ -104,15 +118,29 @@ exports.getGraphData = (graphConfig) => {
 */
 exports.readVICDlog = (telemetryConfig ,filepath) => {
     const line  = Helper.getLastLine(filepath)
-    const lineArray = line.split(" " || "  ").filter(element => element !== '') // taking out empty elements
+    const lineArray = Helper.lineToArray(line) // taking out empty elements
     
+    
+    // Datapoints that need fix are incomplete
     telemetryConfig.test1.unix.data = lineArray[0]
     telemetryConfig.test1.dateTime.data = lineArray[1] + " " +  lineArray[2].split(".")[0]
     telemetryConfig.test1.daemon.data = lineArray[3]
     if (telemetryConfig.test1.daemon.data === 0){ // daemon = 0, no more telemetry data
-        return telemetryConfig
+        return telemetryConfig.test1
     }
+    telemetryConfig.test2.errorCode.data = lineArray[4]
+    telemetryConfig.test2.observeMode.data = lineArray[5]
+    telemetryConfig.test2.current.data = lineArray[6]
+    telemetryConfig.test2.observing.data = "Need fix"
+    telemetryConfig.test3.ccdTemp.data = lineArray[10]
+    telemetryConfig.test3.ccdSetTemp.data = lineArray[11]
+    telemetryConfig.test3.coolerOn.data = lineArray[12]
+    telemetryConfig.test3.coolerSetPoint.data = lineArray[13]
+    telemetryConfig.test3.coolerStable.data = lineArray[14]
+    telemetryConfig.test3.dataState.data = "Need fix"
 
+
+    telemetryConfig.test3.localInfo.data = lineArray[24]
     
     return telemetryConfig
 }

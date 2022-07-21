@@ -11,7 +11,7 @@ import json
 def randStr(chars=string.ascii_uppercase + string.digits, N=10):
     return ''.join(random.choice(chars) for _ in range(N))
 
-FILENAME = "./testdata.txt"
+FILENAME = "./data/testdata.txt"
 MAX_MINUTE_INTERVAL = 30;
 #print("Timestamp", str(datetime.now().strftime("%H:%M:%S")), randStr(N=10))
 

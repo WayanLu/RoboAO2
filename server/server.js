@@ -37,33 +37,33 @@ server.listen(port, () => {
 });
 
 
-//////////////////////////////// SOCKETS
+//////////////////////////////// SOCKETS //////////////////////
 io.on("connection", (socket) => {
   Logger.log(`------ User Connected : ${socket.id} --------`,"")
   
   //////////////// Home Page
-  socket.on(CONFIG.socketStrings.home.route, () => {
-    Logger.log(`${socket.id} reached home page`, "")
-    let lastUpdateTime = null;
-    let intervalID = setInterval(() => {
-      let fileModifiedTime = utils.getLastModifiedTime(CONFIG.paths.logs.testData) // current file time
+  // socket.on(CONFIG.socketStrings.home.route, () => {
+  //   Logger.log(`${socket.id} reached home page`, "")
+  //   let lastUpdateTime = null;
+  //   let intervalID = setInterval(() => {
+  //     let fileModifiedTime = utils.getLastModifiedTime(CONFIG.paths.logs.testData) // current file time
       
-      if (socket.connected) {
-        if (utils.isUpdated(lastUpdateTime, fileModifiedTime)){ //if true, emit socket
-          const data = utils.getData(hasGraph = 1);
-          Logger.log(`${socket.id} File Updated, emitting new data back to client`, "New Data:" + JSON.stringify(data, null, " ") )
-          socket.emit(CONFIG.socketStrings.home.getData, (data) );
-          lastUpdateTime = utils.getLastModifiedTime(CONFIG.paths.logs.testData)
-        } else {// else do nothing
-          //Logger.log("Files for Home page have not been modified", "Skipping socket emit")
-        }
+  //     if (socket.connected) {
+  //       if (utils.isUpdated(lastUpdateTime, fileModifiedTime)){ //if true, emit socket
+  //         const data = utils.getData(hasGraph = 1);
+  //         Logger.log(`${socket.id} File Updated, emitting new data back to client`, "New Data:" + JSON.stringify(data, null, " ") )
+  //         socket.emit(CONFIG.socketStrings.home.getData, (data) );
+  //         lastUpdateTime = utils.getLastModifiedTime(CONFIG.paths.logs.testData)
+  //       } else {// else do nothing
+  //         //Logger.log("Files for Home page have not been modified", "Skipping socket emit")
+  //       }
         
-      }
-      else { // exit interval loop if socket is not connected
-        clearInterval(intervalID);
-      };
-    }, 2000)
-  })
+  //     }
+  //     else { // exit interval loop if socket is not connected
+  //       clearInterval(intervalID);
+  //     };
+  //   }, 2000)
+  // })
 
   ////////////////// VICD Page
   socket.on(CONFIG.vicd.socketStrings.route, () => {

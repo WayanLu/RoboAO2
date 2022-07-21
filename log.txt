@@ -1,3 +1,18 @@
----------Start Log File--------- Mon Jul 18 2022 15:50:44 GMT-1000 (Hawaii-Aleutian Standard Time)Mon Jul 18 2022 15:50:45 GMT-1000 (Hawaii-Aleutian Standard Time)
------- User Connected : XVEBaX2bkaKhy64TAAAB --------
+---------Start Log File--------- Wed Jul 20 2022 15:58:57 GMT-1000 (Hawaii-Aleutian Standard Time)Wed Jul 20 2022 15:59:03 GMT-1000 (Hawaii-Aleutian Standard Time)
+------ User Connected : D8Z3yZkKoHjf9Ue7AAAB --------
+
+Wed Jul 20 2022 15:59:20 GMT-1000 (Hawaii-Aleutian Standard Time)
+D8Z3yZkKoHjf9Ue7AAAB disconnected
+
+Wed Jul 20 2022 15:59:20 GMT-1000 (Hawaii-Aleutian Standard Time)
+------ User Connected : BBSBG1TYwIEkZYOtAAAD --------
+
+Wed Jul 20 2022 16:04:19 GMT-1000 (Hawaii-Aleutian Standard Time)
+BBSBG1TYwIEkZYOtAAAD disconnected
+
+Wed Jul 20 2022 16:04:19 GMT-1000 (Hawaii-Aleutian Standard Time)
+------ User Connected : eCS_yN7QasTK5A0TAAAF --------
+
+Wed Jul 20 2022 16:04:19 GMT-1000 (Hawaii-Aleutian Standard Time)
+eCS_yN7QasTK5A0TAAAF reached vicd page
 

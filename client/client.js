@@ -98,6 +98,18 @@ function generateVisuals(data) {
 } // end generateVisuals()
 
 
+/*
+    modifyVisuals()
+    
+    Telemetry:
+        - Uses the keyname to get the element on the webpage and update its contents
+    Image:
+        - The image id is `image#` and the index of the image list is how it gets the element
+        and updates the image
+    Graph:
+        - Gets the graph element, destroys the Chart object and creates a new Chart object with the new
+        data
+*/
 function modifyVisuals(data){
     const telemetry= data.telemetry
     const image = data.image
@@ -106,19 +118,19 @@ function modifyVisuals(data){
         if (telemetry != null) {
             for (const [tableName, content] of Object.entries(telemetry)) {
                 for (const [name, value] of Object.entries(content)) {
-                    const element = document.getElementById(`${name}`)
+                    const element = document.getElementById(`${name}`) //get specific telemetry element
                     element.textContent = value.data || 2
                 }
             }
         }
         if (image != null) {
             for(index in  image){
-                const picture = document.getElementById(`image${index}`)
+                const picture = document.getElementById(`image${index}`) // image element
                 picture.src = 'data:image/jpeg;base64,' + dict.imageBuffer;
             }
         }
         if (graph != null) {
-            const chart = Chart.getChart('chart').getContext("2d").chart
+            const chart = Chart.getChart('chart').getContext("2d").chart //get chart element
             if (chart === undefined){
                 console.log("Did not get chart")
             } else {
