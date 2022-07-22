@@ -46,6 +46,11 @@
     npm i socket.io
     npm i socket.io-client
     ```
+    ___
+8. Install Jest (https://www.npmjs.com/package/jest)
+    ```
+    npm i jest
+    ```
 
 # Codebase
 The web application consists of two folders, ```client``` and ```server```. ```client``` folder deals with the browser which includes pug, css, and the client side javascript file. The client side javascript ```client.js``` is responsible for rendering the data sent from the server through socketio. The ```server``` folder consists of javascript files that handle data and server side sockets. ```server.js``` is the main file for running the application and its also where socketio on the server side emits and listens for events.
@@ -149,6 +154,7 @@ ___
                 }
             }
         ```
+        - For each component, change the values for the `label` and `x`,`y` titles
     - `status` is how the statuses for each component will be updated, just set it to null
 ___
 
@@ -222,6 +228,14 @@ ___
                 include client.js
     ```
 ___
+```/client/includes/header.pug```
+- Add a tab for the new component
+```pug
+    div.topnav
+            a#home(href="/") Home
+            a#vicd(href="/vicd" ) VICD 
+            a#example(href='/example') Example
+```
 ```/server/server.js```
 - Going back to server.js, add a socket handler for the new component
 <img width="978" alt="Screen Shot 2022-07-19 at 2 21 16 PM" src="https://user-images.githubusercontent.com/71489250/179869655-8af1663e-f895-48f8-84a8-ba0bcf965770.png">
@@ -294,5 +308,24 @@ ___
 ```
 - More documentation on chartJS can be found here (https://www.chartjs.org/docs/latest/)
 ___
+## Logger
 ```/server/libs/logger.js```
 - This file is a basic logger that outputs to a log file. There is a boolean variable that you can set to `true` or `false` to turn it on
+
+___
+## Testing
+```/server/test/```
+- Documentation: https://jestjs.io/
+- If you want to run all tests, type on terminal
+    ```
+    npm test
+    ```
+- For an individual test file,
+    ```
+    npm test /path/to/test.js
+    ```
+- `helper.test.js`
+    - This tests the getGraphData() function to make sure data is correctly being retrieved for each compononent
+- `utils.test.js`
+    - This tests the getData() function to make sure that the config data is correctly being returned
+    -

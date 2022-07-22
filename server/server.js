@@ -16,6 +16,8 @@ Logger.createFile() // start the logger
 
 
 const fixedPath = __dirname.replace("server","client")
+//use middleware to serve static files
+app.use(express.static('public'));
 app.set("views", fixedPath)
 app.set("view engine", "pug");
 app.use(express.static(path.join(fixedPath, "css")))

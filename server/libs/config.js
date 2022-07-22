@@ -114,24 +114,4 @@ module.exports = {
 
         }
     },
-
-    // test: {
-    //     paths: {
-
-    //     },
-    //     socketStrings: {
-    //         route: "testRoute",
-    //         getData: "getTestData"
-    //     },
-    //     telemetry: {
-
-    //     },
-    //     image: {
-
-    //     },
-    //     graph: {
-
-    //     },
-    //     status:null,
-    // }
 }

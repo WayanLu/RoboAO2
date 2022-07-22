@@ -9,14 +9,13 @@ describe(`
 `, () => {
     
     
-    
-    
-    test("VICD getData() Telemetry Data Success", () => {
-        const config = Utils.getData(CONFIG.vicd)
-        const telemetry = config.telemetry
-        const image = config.image
-        const graph = config.graph 
-
+    test.each(Object.entries(CONFIG))("getData() -> %s", (component, config) => {
+        const newConfig = Utils.getData(config)
+        const telemetry = newConfig.telemetry
+        const image = newConfig.image
+        const graph = newConfig.graph
+       
+       
         //telemetry
         for(const [groupName, content] of Object.entries(telemetry)){
             for (const [dataEntry, dataContent] of Object.entries(content)){
@@ -32,10 +31,10 @@ describe(`
             expect(buffer).not.toBeNull()
         }
 
-        //graph
-        const data = graph.data.datasets[0].data
-        expect(data).not.toEqual([])
-    }); 
-
+    
+    
+    })
+    
+ 
 
 });

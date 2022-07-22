@@ -1,18 +1,174 @@
----------Start Log File--------- Wed Jul 20 2022 15:58:57 GMT-1000 (Hawaii-Aleutian Standard Time)Wed Jul 20 2022 15:59:03 GMT-1000 (Hawaii-Aleutian Standard Time)
------- User Connected : D8Z3yZkKoHjf9Ue7AAAB --------
+---------Start Log File--------- Thu Jul 21 2022 10:57:59 GMT-1000 (Hawaii-Aleutian Standard Time)Thu Jul 21 2022 10:58:00 GMT-1000 (Hawaii-Aleutian Standard Time)
+------ User Connected : 7Girvi_hd-Kff5pQAAAB --------
 
-Wed Jul 20 2022 15:59:20 GMT-1000 (Hawaii-Aleutian Standard Time)
-D8Z3yZkKoHjf9Ue7AAAB disconnected
+Thu Jul 21 2022 10:58:02 GMT-1000 (Hawaii-Aleutian Standard Time)
+7Girvi_hd-Kff5pQAAAB disconnected
 
-Wed Jul 20 2022 15:59:20 GMT-1000 (Hawaii-Aleutian Standard Time)
------- User Connected : BBSBG1TYwIEkZYOtAAAD --------
+Thu Jul 21 2022 10:58:03 GMT-1000 (Hawaii-Aleutian Standard Time)
+------ User Connected : xcYq6U6DU0ek4wWSAAAD --------
 
-Wed Jul 20 2022 16:04:19 GMT-1000 (Hawaii-Aleutian Standard Time)
-BBSBG1TYwIEkZYOtAAAD disconnected
+Thu Jul 21 2022 10:58:03 GMT-1000 (Hawaii-Aleutian Standard Time)
+xcYq6U6DU0ek4wWSAAAD reached vicd page
 
-Wed Jul 20 2022 16:04:19 GMT-1000 (Hawaii-Aleutian Standard Time)
------- User Connected : eCS_yN7QasTK5A0TAAAF --------
+Thu Jul 21 2022 10:58:50 GMT-1000 (Hawaii-Aleutian Standard Time)
+xcYq6U6DU0ek4wWSAAAD disconnected
 
-Wed Jul 20 2022 16:04:19 GMT-1000 (Hawaii-Aleutian Standard Time)
-eCS_yN7QasTK5A0TAAAF reached vicd page
+Thu Jul 21 2022 10:58:50 GMT-1000 (Hawaii-Aleutian Standard Time)
+------ User Connected : CwYTpPBKAvlvR5R_AAAF --------
+
+Thu Jul 21 2022 10:58:50 GMT-1000 (Hawaii-Aleutian Standard Time)
+CwYTpPBKAvlvR5R_AAAF reached vicd page
+
+Thu Jul 21 2022 10:58:58 GMT-1000 (Hawaii-Aleutian Standard Time)
+CwYTpPBKAvlvR5R_AAAF disconnected
+
+Thu Jul 21 2022 10:58:58 GMT-1000 (Hawaii-Aleutian Standard Time)
+------ User Connected : imL8xA0W23Ox1C1KAAAH --------
+
+Thu Jul 21 2022 10:58:58 GMT-1000 (Hawaii-Aleutian Standard Time)
+imL8xA0W23Ox1C1KAAAH reached vicd page
+
+Thu Jul 21 2022 10:59:08 GMT-1000 (Hawaii-Aleutian Standard Time)
+imL8xA0W23Ox1C1KAAAH disconnected
+
+Thu Jul 21 2022 10:59:08 GMT-1000 (Hawaii-Aleutian Standard Time)
+------ User Connected : ypcyyZtln5-GpcQFAAAJ --------
+
+Thu Jul 21 2022 10:59:08 GMT-1000 (Hawaii-Aleutian Standard Time)
+ypcyyZtln5-GpcQFAAAJ reached vicd page
+
+Thu Jul 21 2022 10:59:13 GMT-1000 (Hawaii-Aleutian Standard Time)
+ypcyyZtln5-GpcQFAAAJ disconnected
+
+Thu Jul 21 2022 10:59:14 GMT-1000 (Hawaii-Aleutian Standard Time)
+------ User Connected : tId7AOUN3edWI55ZAAAL --------
+
+Thu Jul 21 2022 10:59:14 GMT-1000 (Hawaii-Aleutian Standard Time)
+tId7AOUN3edWI55ZAAAL reached vicd page
+
+Thu Jul 21 2022 10:59:20 GMT-1000 (Hawaii-Aleutian Standard Time)
+tId7AOUN3edWI55ZAAAL disconnected
+
+Thu Jul 21 2022 10:59:20 GMT-1000 (Hawaii-Aleutian Standard Time)
+------ User Connected : hbW2bfax8auLRaYlAAAN --------
+
+Thu Jul 21 2022 10:59:20 GMT-1000 (Hawaii-Aleutian Standard Time)
+hbW2bfax8auLRaYlAAAN reached vicd page
+
+Thu Jul 21 2022 11:01:06 GMT-1000 (Hawaii-Aleutian Standard Time)
+hbW2bfax8auLRaYlAAAN disconnected
+
+Thu Jul 21 2022 11:01:06 GMT-1000 (Hawaii-Aleutian Standard Time)
+------ User Connected : iQmvwyJ0jWR4LXbMAAAP --------
+
+Thu Jul 21 2022 11:01:06 GMT-1000 (Hawaii-Aleutian Standard Time)
+iQmvwyJ0jWR4LXbMAAAP reached vicd page
+
+Thu Jul 21 2022 11:01:29 GMT-1000 (Hawaii-Aleutian Standard Time)
+iQmvwyJ0jWR4LXbMAAAP disconnected
+
+Thu Jul 21 2022 11:01:29 GMT-1000 (Hawaii-Aleutian Standard Time)
+------ User Connected : 7ll-QCaxjQSlZEbYAAAR --------
+
+Thu Jul 21 2022 11:01:29 GMT-1000 (Hawaii-Aleutian Standard Time)
+7ll-QCaxjQSlZEbYAAAR reached vicd page
+
+Thu Jul 21 2022 11:24:57 GMT-1000 (Hawaii-Aleutian Standard Time)
+7ll-QCaxjQSlZEbYAAAR disconnected
+
+Thu Jul 21 2022 11:24:58 GMT-1000 (Hawaii-Aleutian Standard Time)
+------ User Connected : swBERse_ueIi43yqAAAT --------
+
+Thu Jul 21 2022 11:24:58 GMT-1000 (Hawaii-Aleutian Standard Time)
+swBERse_ueIi43yqAAAT reached vicd page
+
+Thu Jul 21 2022 11:25:18 GMT-1000 (Hawaii-Aleutian Standard Time)
+swBERse_ueIi43yqAAAT disconnected
+
+Thu Jul 21 2022 11:25:18 GMT-1000 (Hawaii-Aleutian Standard Time)
+------ User Connected : OPdar7jkfxVvr520AAAV --------
+
+Thu Jul 21 2022 11:25:18 GMT-1000 (Hawaii-Aleutian Standard Time)
+OPdar7jkfxVvr520AAAV reached vicd page
+
+Thu Jul 21 2022 11:25:37 GMT-1000 (Hawaii-Aleutian Standard Time)
+OPdar7jkfxVvr520AAAV disconnected
+
+Thu Jul 21 2022 11:25:37 GMT-1000 (Hawaii-Aleutian Standard Time)
+------ User Connected : gfeBPKHS0J8T4Kd6AAAX --------
+
+Thu Jul 21 2022 11:25:37 GMT-1000 (Hawaii-Aleutian Standard Time)
+gfeBPKHS0J8T4Kd6AAAX reached vicd page
+
+Thu Jul 21 2022 11:25:54 GMT-1000 (Hawaii-Aleutian Standard Time)
+gfeBPKHS0J8T4Kd6AAAX disconnected
+
+Thu Jul 21 2022 11:25:54 GMT-1000 (Hawaii-Aleutian Standard Time)
+------ User Connected : Y9BNzv1uFE_BvJ_bAAAZ --------
+
+Thu Jul 21 2022 11:25:54 GMT-1000 (Hawaii-Aleutian Standard Time)
+Y9BNzv1uFE_BvJ_bAAAZ reached vicd page
+
+Thu Jul 21 2022 11:57:02 GMT-1000 (Hawaii-Aleutian Standard Time)
+Y9BNzv1uFE_BvJ_bAAAZ disconnected
+
+Thu Jul 21 2022 11:57:02 GMT-1000 (Hawaii-Aleutian Standard Time)
+------ User Connected : WwaY5dtIh2kHdHUcAAAb --------
+
+Thu Jul 21 2022 11:57:02 GMT-1000 (Hawaii-Aleutian Standard Time)
+WwaY5dtIh2kHdHUcAAAb reached vicd page
+
+Thu Jul 21 2022 11:57:27 GMT-1000 (Hawaii-Aleutian Standard Time)
+WwaY5dtIh2kHdHUcAAAb disconnected
+
+Thu Jul 21 2022 11:57:27 GMT-1000 (Hawaii-Aleutian Standard Time)
+------ User Connected : xZOU5EohWyC1XIGPAAAd --------
+
+Thu Jul 21 2022 11:57:27 GMT-1000 (Hawaii-Aleutian Standard Time)
+xZOU5EohWyC1XIGPAAAd reached vicd page
+
+Thu Jul 21 2022 11:57:52 GMT-1000 (Hawaii-Aleutian Standard Time)
+xZOU5EohWyC1XIGPAAAd disconnected
+
+Thu Jul 21 2022 11:57:52 GMT-1000 (Hawaii-Aleutian Standard Time)
+------ User Connected : tGGkaK3MprEJHTb1AAAf --------
+
+Thu Jul 21 2022 11:57:52 GMT-1000 (Hawaii-Aleutian Standard Time)
+tGGkaK3MprEJHTb1AAAf reached vicd page
+
+Thu Jul 21 2022 11:58:03 GMT-1000 (Hawaii-Aleutian Standard Time)
+tGGkaK3MprEJHTb1AAAf disconnected
+
+Thu Jul 21 2022 11:58:03 GMT-1000 (Hawaii-Aleutian Standard Time)
+------ User Connected : v5P-PEkwnjunAngNAAAh --------
+
+Thu Jul 21 2022 11:58:03 GMT-1000 (Hawaii-Aleutian Standard Time)
+v5P-PEkwnjunAngNAAAh reached vicd page
+
+Thu Jul 21 2022 11:58:26 GMT-1000 (Hawaii-Aleutian Standard Time)
+v5P-PEkwnjunAngNAAAh disconnected
+
+Thu Jul 21 2022 11:58:26 GMT-1000 (Hawaii-Aleutian Standard Time)
+------ User Connected : 6QE44GLLIUtWUEEuAAAj --------
+
+Thu Jul 21 2022 11:58:26 GMT-1000 (Hawaii-Aleutian Standard Time)
+6QE44GLLIUtWUEEuAAAj reached vicd page
+
+Thu Jul 21 2022 11:58:51 GMT-1000 (Hawaii-Aleutian Standard Time)
+6QE44GLLIUtWUEEuAAAj disconnected
+
+Thu Jul 21 2022 11:58:51 GMT-1000 (Hawaii-Aleutian Standard Time)
+------ User Connected : g0GokXROERaiCD_EAAAl --------
+
+Thu Jul 21 2022 11:58:51 GMT-1000 (Hawaii-Aleutian Standard Time)
+g0GokXROERaiCD_EAAAl reached vicd page
+
+Thu Jul 21 2022 11:59:11 GMT-1000 (Hawaii-Aleutian Standard Time)
+g0GokXROERaiCD_EAAAl disconnected
+
+Thu Jul 21 2022 11:59:11 GMT-1000 (Hawaii-Aleutian Standard Time)
+------ User Connected : guPsE5ewdMcQlGOWAAAn --------
+
+Thu Jul 21 2022 11:59:11 GMT-1000 (Hawaii-Aleutian Standard Time)
+guPsE5ewdMcQlGOWAAAn reached vicd page
 

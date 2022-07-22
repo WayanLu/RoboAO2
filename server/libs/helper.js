@@ -106,7 +106,15 @@ exports.getGraphData = (graphConfig) => {
 
     return graphConfig
 }
+/*
+    createDataPoint()
 
+    Helper function to take in an x and y value and convert it into a datapoint for 
+    graphs. This could be useful when pulling data from a database
+*/
+exports.createDataPoint = (xVal, yVal) => {
+    return {x : xVal, y : yval}
+}
 
 
 ////////////// Functions for parsing telemetry data ////////////////////////
