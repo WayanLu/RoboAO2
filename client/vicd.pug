@@ -14,14 +14,23 @@ html(lang="en")
             const data = !{JSON.stringify(data)} // getting data from res.render
     body 
         include includes/header.pug
-        h1 VICD
+        div.component VICD
     
         .container
-            .telemetry 
+            .telemetry-graph-container
+                h1 Telemetry
+                hr
+                .telemetry 
+                    
+                .graph
+                    h1 Graph
+                    hr
 
             .image
+                h1 Image
+                hr
 
-            .graph
+            
                 
         script
             include client.js

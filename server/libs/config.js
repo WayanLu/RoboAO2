@@ -78,10 +78,10 @@ module.exports = {
                 path: "./data/pug.jpeg",
                 imageBuffer: null
             },
-            // {
-            //     path:"./turtle.jpg",
-            //     imageBuffer: null
-            // },
+            {
+                path:"./data/turtle.jpg",
+                imageBuffer: null
+            },
         ],
         graph: {
             type: 'line',
@@ -94,12 +94,17 @@ module.exports = {
             options: {
                 scales: {
                     x: {
+                        ticks: {
+                            maxRotation: 60,
+                            minRotation: 60
+                        },
                         title: {
                             display: true,
                             text: "Time Stamp"
                         }
                     },
                     y: {
+                        max:100,
                         title: {
                             display: true,
                             text: "Value"
@@ -114,4 +119,5 @@ module.exports = {
 
         }
     },
+
 }

@@ -149,6 +149,34 @@ exports.readVICDlog = (telemetryConfig ,filepath) => {
 
 
     telemetryConfig.test3.localInfo.data = lineArray[24]
+    telemetryConfig['test4'] = {
+        boto: {
+            data: 4,
+            title: "Data State"
+        },
+        tesl: {
+            data: 4,
+            title: "Local Info"
+        }
+    }
+    telemetryConfig['test5'] = {
+        fads: {
+            data: "uts",
+            title: "Data State"
+        },
+        ldsg: {
+            data: "boto",
+            title: "Locasdadaal Info"
+        },
+        asdsf: {
+            data: 1234,
+            title: "Data State"
+        },
+        asfalgna: {
+            data: null,
+            title: "Local Info"
+        }
+    }
     
     return telemetryConfig
 }

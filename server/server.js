@@ -39,6 +39,7 @@ server.listen(port, () => {
 });
 
 
+const INTERVAL = 2000
 //////////////////////////////// SOCKETS //////////////////////
 io.on("connection", (socket) => {
   Logger.log(`------ User Connected : ${socket.id} --------`,"")
@@ -88,7 +89,7 @@ io.on("connection", (socket) => {
       else { // exit interval loop if socket is not connected
         clearInterval(intervalID);
       };
-    }, 2000)
+    }, INTERVAL)
   })
 
 
