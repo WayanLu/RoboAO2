@@ -29,7 +29,9 @@ exports.getLastModifiedTime = (filePath) => {
 }
 
 /*
+    Unused
 
+    Parses a text file that is in json format
 */
 function readData(filePath) {
     const fileInfo =fs.readFileSync(filePath, {encoding: "utf-8",})
@@ -37,9 +39,18 @@ function readData(filePath) {
     return data
 }
 
-exports.getData = (dataConfig) => { // change 
+
+
+/*
+    getData()
+
+    Main function for data retrieval. Checks which component that is being requested and gets all the
+    data to be returned in a dictonary
+*/
+exports.getData = (dataConfig) => { 
     //------------ Telemetry --------------
     
+    //CHANGE THE SWITCH CASE AND THE CASES ONCE THERE ARE ACTUAL TELEMETRY LOGS
     switch(dataConfig.paths.testGraph){
         case CONFIG.vicd.paths.testGraph:
             dataConfig.telemetry = Helper.readVICDlog(dataConfig.telemetry, dataConfig.paths.log)
