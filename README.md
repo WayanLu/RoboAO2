@@ -9,6 +9,7 @@
 - chartjs ^3.8.0
 - socketio ^4.5.1
 - pug ^3.0.2
+- jest ^28.1.3
 
 
 ## **Steps for installing if you want to develop the webpage on an IDE**
@@ -49,7 +50,7 @@
     ___
 8. Install Jest (https://www.npmjs.com/package/jest)
     ```
-    npm i jest
+    npm i -D jest
     ```
 
 # Codebase
@@ -136,12 +137,17 @@ ___
                 options: {
                     scales: {
                         x: {
+                            ticks: {
+                                maxRotation: 60,
+                                minRotation: 60
+                            },
                             title: {
                                 display: true,
                                 text: "Time Stamp"
                             }
                         },
                         y: {
+                            max:100,
                             title: {
                                 display: true,
                                 text: "Value"
@@ -154,7 +160,7 @@ ___
                 }
             }
         ```
-        - For each component, change the values for the `label` and `x`,`y` titles
+        - For each component, change the values for the `label` and `x`,`y` titles. You can also set max `y` values and 
     - `status` is how the statuses for each component will be updated, just set it to null
 ___
 
@@ -215,14 +221,21 @@ ___
                 const data = !{JSON.stringify(data)} // getting data from res.render
         body 
             include includes/header.pug
-            h1 Example
-        
+            div.component Home
+    
             .container
-                .telemetry 
+                .telemetry-graph-container
+                    h1 Telemetry
+                    hr
+                    .telemetry 
+                        
+                    .graph
+                        h1 Graph
+                        hr
 
                 .image
-
-                .graph
+                    h1 Image
+                    hr
                     
             script
                 include client.js
@@ -320,6 +333,7 @@ ___
     ```
     npm test
     ```
+
 - For an individual test file,
     ```
     npm test /path/to/test.js
@@ -328,4 +342,4 @@ ___
     - This tests the getGraphData() function to make sure data is correctly being retrieved for each compononent
 - `utils.test.js`
     - This tests the getData() function to make sure that the config data is correctly being returned
-    -
+- These test files basics run through each component and checks to see that the compononent config is properly retrieving data. If you want to run a test on an individual component, you would need to create a seperate test case for the related file.
