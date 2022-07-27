@@ -2,11 +2,7 @@ import matplotlib.pyplot as plt
 from astropy.utils.data import get_pkg_data_filename
 from astropy.io import fits
 from astropy.visualization import astropy_mpl_style
-
-#plt.style.use(astropy_mpl_style)
-#image_file = get_pkg_data_filename('data/wfs.fits')
-
-#fits.info(image_file)
+# Script to read a fits file and plot its image
 
 fn = 'data/wfs.fits'
 with fits.open(fn) as hdul:
