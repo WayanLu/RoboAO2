@@ -189,11 +189,13 @@ ___
     const utils = require("../libs/utils")
     const CONFIG = require("../libs/config")
     const router = express.Router()
+    const Logger = require("../libs/logger")
 
 
     module.exports = function (io) {
         router.get("/example", (req,res) => {
             const exampleCopy = {...CONFIG.example}
+            //Logger.log("Rendering example data" , "")
             const data = utils.getData(exampleCopy)
             res.render('example', {data});
         });
@@ -275,7 +277,7 @@ ___
             else { // exit interval loop if socket is not connected
                 clearInterval(intervalID);
             };
-            }, 2000)
+            }, INTERVAL)
         })
     ```
 - The socket handler is a interval loop of 2 seconds(2000ms). If the file of the telemetry data is not updated, it will not emit a getData event to the client. 
@@ -324,6 +326,7 @@ ___
 ## Logger
 ```/server/libs/logger.js```
 - This file is a basic logger that outputs to a log file. There is a boolean variable that you can set to `true` or `false` to turn it on
+- If you add another route or function, you can add a `Logger.log()` function
 
 ___
 ## Testing
