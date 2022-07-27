@@ -10,6 +10,7 @@ const Helper = require("./helper")
     Compares two datetime values and returns true or false if times are different
 */
 exports.isUpdated = (lastUpdateTime, currentUpdateTime) => {
+    Logger.log("isUpdated", {lastUpdateTime, currentUpdateTime})
     if (JSON.stringify(lastUpdateTime) == JSON.stringify(currentUpdateTime)){
         return false
     } else {
@@ -23,6 +24,7 @@ exports.isUpdated = (lastUpdateTime, currentUpdateTime) => {
     Gets a files last modified time
 */
 exports.getLastModifiedTime = (filePath) => {
+    Logger.log("getLastModifiedTime()", filePath)
     const {mtime} = fs.statSync(filePath)
 
     return mtime
@@ -49,7 +51,7 @@ function readData(filePath) {
 */
 exports.getData = (dataConfig) => { 
     //------------ Telemetry --------------
-    
+    Logger.log("getData()", "")
     //CHANGE THE SWITCH CASE AND THE CASES ONCE THERE ARE ACTUAL TELEMETRY LOGS
     switch(dataConfig.paths.testGraph){
         case CONFIG.vicd.paths.testGraph:

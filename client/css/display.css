@@ -28,10 +28,20 @@ body{
   font-size: 230%;
   background-color: white;
   width:100%;
+  border-top: 2px solid #333;
   border-bottom: 2px;
   border-bottom-color: black;
   border-bottom-style: solid;
-  
+}
+.good {
+  background-color: green;
+}
+
+.warning {
+  background-color: yellow;
+}
+.danger {
+  background-color: red;
 }
 .container {
     background-color: white;

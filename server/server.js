@@ -65,7 +65,7 @@ io.on("connection", (socket) => {
   //     else { // exit interval loop if socket is not connected
   //       clearInterval(intervalID);
   //     };
-  //   }, 2000)
+  //   }, INTERVAL)
   // })
 
   ////////////////// VICD Page

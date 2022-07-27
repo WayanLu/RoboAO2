@@ -10,14 +10,18 @@ module.exports = {
             getData: "get_vicd_data"
         },
         telemetry: {
-            test1: {
+            General: {
                 unix: {
                     data: null,
                     title: "Unix Time"
                 },
-                dateTime: {
+                date: {
                     data: null,
-                    title: "Date & Time"
+                    title: "Date"
+                },
+                time:{
+                    data: null,
+                    title: "Time"
                 },
                 daemon: {
                     data: null,
@@ -25,7 +29,7 @@ module.exports = {
                 },
                 
             },
-            test2: {
+            State: {
                 errorCode: {
                     data: null,
                     title: "Error Code"
@@ -43,7 +47,7 @@ module.exports = {
                     title: "Observing"
                 }
             },
-            test3: {
+            Temperature: {
                 ccdTemp: {
                     data: null,
                     title: "CCD Temp"
@@ -115,7 +119,7 @@ module.exports = {
                     duration: 0
                 },
             },
-            status: null,
+        status: null,
 
         }
     },

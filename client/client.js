@@ -159,9 +159,14 @@ function modifyVisuals(data){
 function statusUpdate (data) {
     try {
         const status = data.status
+        const component = document.querySelector(".component")
         for (const [tabName, statusLevel] of Object.entries(status)){
             const tab = document.getElementById(`${tabName}`)
-            tab.className = statusLevel
+            tab.id = statusLevel
+            
+            if (component.classList.contains(tabName)){
+                component.classList.add(statusLevel)
+            }
         }
         
     }catch (error) {

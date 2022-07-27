@@ -221,7 +221,7 @@ ___
                 const data = !{JSON.stringify(data)} // getting data from res.render
         body 
             include includes/header.pug
-            div.component Home
+            div.component.home Home
     
             .container
                 .telemetry-graph-container
@@ -242,7 +242,7 @@ ___
     ```
 ___
 ```/client/includes/header.pug```
-- Add a tab for the new component
+- Add a tab for the new component. Change the class after .component
 ```pug
     div.topnav
             a#home(href="/") Home

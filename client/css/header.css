@@ -56,19 +56,19 @@
     color: white;
 }
 
-.topnav a.warning{
+.topnav a#warning{
     border:5px;
     border-style:solid;
     border-color:yellow;
     padding:10px 12px;
 }
-.topnav a.good{
+.topnav a#good{
     border:5px;
     border-style:solid;
     border-color:green;
     padding:10px 12px;
 }
-.topnav a.danger{
+.topnav a#danger{
     border:5px;
     border-style:solid;
     border-color:red;
