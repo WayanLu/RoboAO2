@@ -1,5 +1,37 @@
 module.exports = {
-    // delete above 
+    home: {
+        paths: {
+            testGraph:"home"
+        },
+        socketStrings: {
+            route: "home",
+            getData: "get_home_data",
+        },
+        telemetry:{
+            Vicd: {
+                date: {
+                    data: null,
+                    title: "Date"
+                },
+                time:{
+                    data: null,
+                    title: "Time"
+                },
+                errorCode: {
+                    data: null,
+                    title: "Error Code"
+                },
+                ccdTemp:{
+
+                },
+            }
+
+        },
+        image: null,
+        graph:null,
+        status: null,
+
+    },
     vicd: {
         paths: {
             log: "./data/vicd.dat",
@@ -83,7 +115,7 @@ module.exports = {
                 imageBuffer: null
             },
             {
-                path:"./data/turtle.jpg",
+                path:"./data/cat.jpg",
                 imageBuffer: null
             },
         ],

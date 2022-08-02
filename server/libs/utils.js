@@ -54,15 +54,22 @@ exports.getData = (dataConfig) => {
     Logger.log("getData()", "")
     //CHANGE THE SWITCH CASE AND THE CASES ONCE THERE ARE ACTUAL TELEMETRY LOGS
     switch(dataConfig.paths.testGraph){
+        case CONFIG.home.paths.testGraph:
+            dataConfig.telemetry = Helper.getHomeData(dataConfig.telemetry)
+            break
         case CONFIG.vicd.paths.testGraph:
             dataConfig.telemetry = Helper.readVICDlog(dataConfig.telemetry, dataConfig.paths.log)
             break
         //// Add case for new component
     }
     
-
-    dataConfig.image = Helper.getImage(dataConfig.image)
-    dataConfig.graph = Helper.getGraphData(dataConfig.graph)
+    if (dataConfig.image !== null) {
+        dataConfig.image = Helper.getImage(dataConfig.image)
+    }
+    if (dataConfig.graph !== null) {
+        dataConfig.graph = Helper.getGraphData(dataConfig.graph)
+    }
+   
     dataConfig.status = Helper.getStatusData()
     
     return dataConfig

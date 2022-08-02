@@ -13,7 +13,6 @@ try {
 }
 
 socket.on(data.socketStrings.getData, (socketData) => {
-    console.log("get_home_data")
     try{
         statusUpdate(socketData)
         modifyVisuals(socketData)

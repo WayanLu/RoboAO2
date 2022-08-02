@@ -281,6 +281,7 @@ ___
         })
     ```
 - The socket handler is a interval loop of 2 seconds(2000ms). If the file of the telemetry data is not updated, it will not emit a getData event to the client. 
+- Update the function parameters for each utils function call in the socket handler code chunk
 ___
 ```/server/libs/utils.js```
 - With all of the routing code implemented. The getData() function needs to correctly parse the data for the specific component. Make sure that the dictionary name for the switch case is the same across all components for telemetry

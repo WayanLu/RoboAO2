@@ -4,7 +4,7 @@ from astropy.io import fits
 from astropy.visualization import astropy_mpl_style
 # Script to read a fits file and plot its image
 
-fn = 'data/wfs.fits'
+fn = 'data/WFS_sample'
 with fits.open(fn) as hdul:
     img = hdul[0].data
     hdr = hdul[0].header
