@@ -23,10 +23,25 @@ socket.on(data.socketStrings.getData, (socketData) => {
 
 
 ////////////////// Functions 
+
+
+function getStatusFromData(elementData, statusList){
+    const [good, warning, danger] = statusList
+    if (elementData <= good){
+        return "good"
+    }
+    else if(elementData <= warning){
+        return "warning"
+    }
+    else if(elementData <= danger){
+        return "danger"
+    }
+}
 /* 
     Function that generates the html elements on first get request to the page, iterates through the data
     sent from the server and creates html elements with the appropriate data
 */
+
 function generateVisuals(data) {
     const telemetry = data.telemetry
     const image = data.image
@@ -57,6 +72,11 @@ function generateVisuals(data) {
                     cellInfo.id = name // setting element id
                     cellName.textContent = value.title // This is the name for the data
                     cellInfo.textContent = value.data || 2 // This is the data 
+                    if (value.status !== undefined){ // if a specific telemetry data wants a status
+                        // const valueStatusList = value.status
+                        // const elementStatus = getStatusFromData(value.data, value.status)
+                        cellInfo.classList.add(value.status)
+                    }
                     dataRow.appendChild(cellName)
                     dataRow.appendChild(cellInfo)
                     thead.appendChild(dataRow)

@@ -122,6 +122,27 @@ exports.createDataPoint = (xVal, yVal) => {
     return {x : xVal, y : yVal}
 }
 
+/*
+    logUpToDate()
+
+    Checks a components most recent log and returns a status based on how recent it is
+*/
+exports.logUpToDate = (warningThreshold, dangerThreshold, lastLogTime) =>{
+    const currentTime = new Date()
+    const logTime = new Date(lastLogTime)
+
+    const diffTime = Math.abs(currentTime-logTime) / 1000 // seconds
+    
+    if (diffTime < warningThreshold) {
+        return "good"
+    }
+    else if( diffTime > dangerThreshold){
+        return "danger"
+    }
+    else {
+        return "warning"
+    }
+}
 
 ////////////// Functions for parsing telemetry data ////////////////////////
 /* 
@@ -129,9 +150,17 @@ exports.createDataPoint = (xVal, yVal) => {
 
     Parses the last line of telemetry file related to VICD and assigns values to each data entry of the
     telemetry config
+
+    ***** NEED TO UPDATE, CURRENTLY USED TO TEST
 */
 exports.readVICDlog = (telemetryConfig ,filepath) => {
     Logger.log("readVICDLog()", "")
+
+    //seconds *** update values
+    const warningTimeThreshold = 9999
+    const dangerTimeThreshold = 999999999
+
+
     const line  = Helper.getLastLine(filepath)
     const lineArray = Helper.lineToArray(line) // taking out empty elements
     
@@ -140,6 +169,10 @@ exports.readVICDlog = (telemetryConfig ,filepath) => {
     telemetryConfig.General.unix.data = lineArray[0]
     telemetryConfig.General.date.data = lineArray[1]
     telemetryConfig.General.time.data =  lineArray[2].split(".")[0]
+    // Check if last log is up to date 
+    const dateString = lineArray[1]+ " " +lineArray[2]
+    telemetryConfig.General.time.status = Helper.logUpToDate(warningTimeThreshold,dangerTimeThreshold,dateString)
+
     telemetryConfig.General.daemon.data = lineArray[3]
     if (telemetryConfig.General.daemon.data === 0){ // daemon = 0, no more telemetry data
         return telemetryConfig.General
@@ -149,7 +182,7 @@ exports.readVICDlog = (telemetryConfig ,filepath) => {
     telemetryConfig.State.current.data = lineArray[6]
     telemetryConfig.State.observing.data = "Need fix"
     telemetryConfig.Temperature.ccdTemp.data = lineArray[10]
-    telemetryConfig.Temperature.ccdSetTemp.data = lineArray[11]
+    telemetryConfig.Temperature.ccdSetTemp.data =  lineArray[11]
     telemetryConfig.Temperature.coolerOn.data = lineArray[12]
     telemetryConfig.Temperature.coolerSetPoint.data = lineArray[13]
     telemetryConfig.Temperature.coolerStable.data = lineArray[14]
