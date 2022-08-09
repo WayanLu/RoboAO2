@@ -43,6 +43,11 @@ const INTERVAL = 2000
 //////////////////////////////// SOCKETS //////////////////////
 io.on("connection", (socket) => {
   Logger.log(`------ User Connected : ${socket.id} --------`,"")
+
+  // Interval that gets updated data 
+  let dataUpdateInterval = setInterval(() => {
+    
+  }, 3000)
   
   //////////////// Home Page
   // socket.on(CONFIG.socketStrings.home.route, () => {
